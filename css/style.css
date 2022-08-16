@@ -31,6 +31,27 @@ body{
     background: #eee;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } 
+  
 .btn{
     margin-top: 1rem;
     display: inline-block;
@@ -40,6 +61,7 @@ body{
     border: .2rem solid var(--dark);
     color: var(--dark);
     cursor: pointer;
+    background: none;
 }
 
 .btn:hover{
@@ -138,7 +160,7 @@ body{
 
 .header .shopping-cart{
     position: absolute;
-    top: 110%; right: 2rem;
+    top: 110%; right: -110%;
     padding: 1rem;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
@@ -146,7 +168,13 @@ body{
     background: #fff;
 }
 
+.header .shopping-cart.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+
 .header .shopping-cart .productContainer{
+    height: 350px;
     overflow-y: scroll;
 }
 .header .shopping-cart .box{
@@ -200,4 +228,131 @@ body{
     display: block;
     text-align: center;
     margin: 1rem;
+}
+
+.header .login-form{
+  position: absolute;
+  top: 110%; right: -110%;
+  width: 35rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  border-radius: .5rem;
+  background: #fff;
+  text-align: center;
+}
+
+.header .login-form.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+
+.header .login-form h3{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.header .login-form .box{
+  width: 100%;
+  margin: .7rem 0;
+  background: #eee;
+  border-radius: .5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: var(--dark);
+  text-transform: none;
+  color: black;
+} 
+
+.header .login-form .box:focus{
+  border: 1px solid var(--primary);
+}
+
+.header .login-form  p{
+  font-size: 1.4rem;
+  padding: .5rem 0;
+  color: var(--light-color);
+}
+
+.header .login-form p a{
+  color: var(--primary);
+}
+
+.header .login-form p a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  .header{
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px){
+
+  #menu-btn{
+    display: inline-block;
+}
+
+.header .search-form{
+  width: 90%;
+}
+
+  .header .navbar{
+    position: absolute;
+    top: 110%; right: -110%;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+  }
+
+  .header .navbar.active{
+    right: 2rem;
+    transition: .4s linear;
+  }
+
+  .header .navbar a{
+    font-size: 2rem;
+    margin: 2rem 2.5rem;
+    display: block;
+  }
+
+}
+
+@media (max-width: 450px){
+  
+  html{
+    font-size: 50%;
+  }
 }
